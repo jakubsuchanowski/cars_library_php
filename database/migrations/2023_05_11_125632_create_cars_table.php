@@ -23,8 +23,8 @@ return new class extends Migration
             $table->string('transmission');
             $table->string('type');
             $table->integer('doors_number');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+//            $table->timestamp('created_at');
+//            $table->timestamp('updated_at');
 
         });
     }

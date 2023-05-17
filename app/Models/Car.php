@@ -20,4 +20,5 @@ class Car extends Model
         'type',
         'doors_number'
     ];
+    public $timestamps=false;
 }

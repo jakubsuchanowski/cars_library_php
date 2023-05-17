@@ -18,6 +18,32 @@ class CarController extends Controller
     }
 
     public function addCar(Request $request){
+        $validated = $request ->validate([
+           'brand' => ['required', 'string'],
+           'model' => ['required', 'string'],
+           'production_year' => ['required', 'int'],
+           'power_hp' => ['required', 'int'],
+           'engine_capacity' => ['required', 'int'],
+           'fuel_type' => ['required', 'string'],
+           'drive' => ['required', 'string'],
+           'transmission' => ['required', 'string'],
+           'type' => ['required', 'string'],
+           'doors_number' => ['required', 'int']
+        ],
+            [
+                'brand.required'=>'Podaj markę!',
+                'model.required'=>'Podaj model!',
+                'production_year.required'=>'Podaj rok produkcji!',
+                'power_hp.required'=>'Podaj moc!',
+                'engine_capacity.required'=>'Podaj pojemność silnika!',
+                'fuel_type.required'=>'Podaj rodzaj paliwa!',
+                'drive.required'=>'Podaj rodzaj napędu!',
+                'transmission.required'=>'Podaj rodzaj skrzyni biegów!',
+                'type.required'=>'Podaj typ nadwozia!',
+                'doors_number.required'=>'Podaj liczbę drzwi!'
+            ]);
+
+
         $car = new Car();
         $car->brand = $request->brand;
         $car->model = $request->model;
@@ -43,6 +69,30 @@ class CarController extends Controller
     }
 
     public function updateCar($id, Request $request){
+        $validated = $request ->validate([
+            'brand' => ['required', 'string'],
+            'model' => ['required', 'string'],
+            'production_year' => ['required', 'int'],
+            'power_hp' => ['required', 'int'],
+            'engine_capacity' => ['required', 'int'],
+            'fuel_type' => ['required', 'string'],
+            'drive' => ['required', 'string'],
+            'transmission' => ['required', 'string'],
+            'type' => ['required', 'string'],
+            'doors_number' => ['required', 'int']
+        ],
+            [
+                'brand.required'=>'Podaj markę!',
+                'model.required'=>'Podaj model!',
+                'production_year.required'=>'Podaj rok produkcji!',
+                'power_hp.required'=>'Podaj moc!',
+                'engine_capacity.required'=>'Podaj pojemność silnika!',
+                'fuel_type.required'=>'Podaj rodzaj paliwa!',
+                'drive.required'=>'Podaj rodzaj napędu!',
+                'transmission.required'=>'Podaj rodzaj skrzyni biegów!',
+                'type.required'=>'Podaj typ nadwozia!',
+                'doors_number.required'=>'Podaj liczbę drzwi!'
+            ]);
         $car = Car::find($id);
         $car->brand = $request->brand;
         $car->model = $request->model;
