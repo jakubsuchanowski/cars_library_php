@@ -8,7 +8,6 @@
                 <div class = "card-body">
                     <form action="{{route('cars.update', ['id'=>$car->id])}}"  method="POST">
                         {{csrf_field()}}
-                        @method('PUT')
                         <div class = "form-group">
                             <div class="form-group">
                             <label>Marka</label>

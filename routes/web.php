@@ -20,5 +20,5 @@ Route::get('/cars', [CarController::class, 'carsList'])->name("cars.list");
 Route::get('/cars/new', [CarController::class, 'showCarForm'])->name('cars.form');
 Route::post('/cars/add', [CarController::class, 'addCar'])->name('cars.add');
 Route::get('/cars/edit/{id}', [CarController::class, 'showEditCarForm'])->name('cars.editForm');
-Route::put('/cars/update/{id}', [CarController::class, 'updateCar'])->name('cars.update');
-Route::delete('/cars/delete/{id}', [CarController::class, 'deleteCar'])->name('cars.delete');
+Route::post('/cars/update/{id}', [CarController::class, 'updateCar'])->name('cars.update');
+Route::get('/cars/delete/{id}', [CarController::class, 'deleteCar'])->name('cars.delete');
