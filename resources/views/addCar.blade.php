@@ -4,15 +4,6 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-{{--                @if ($errors->any())--}}
-{{--                    <div class="alert alert-danger" >--}}
-{{--                        <ul>--}}
-{{--                            @foreach ($errors->all() as $error)--}}
-{{--                                <li>{{ $error }}</li>--}}
-{{--                            @endforeach--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-{{--                @endif--}}
                 <h1 class="text-center">Dodaj nowy samochód</h1>
                 <div class = "card-body">
                     <form action="{{route('cars.add')}}"  method="POST">
@@ -47,7 +38,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Moc</label>
-                                <input type="number" name="power_hp" placeholder="Podaj moc " class="form-control @error('power_hp') is-invalid @enderror">
+                                <input type="number" name="power_hp" placeholder="Podaj moc" class="form-control @error('power_hp') is-invalid @enderror">
                                 @error('power_hp')
                                 <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

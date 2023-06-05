@@ -31,7 +31,11 @@
         <td>{{$car->doors_number}}</td>
         <td>
             <a href="{{route('cars.editForm',['id'=> $car->id])}}" class="btn btn-warning">Edytuj</a>
-            <a href="{{route('cars.delete',['id'=> $car->id])}}}" class="btn btn-danger">Usuń</a>
+            <form method="POST" action="{{route('cars.delete',['id'=> $car->id])}}}" >
+                @method('delete')
+            <button type="submit" class="btn btn-danger">Usuń</button>
+            </form>
+
         </td>
     </tr>
     @endforeach
